@@ -1,0 +1,749 @@
+/* =====================================================
+   GAYA.CSS - Portfolio Pribadi One Page
+   Gaya: Neo-Brutalism
+   Palet: Happy Hues #17 (krem, navy, pink, biru, peach)
+   ===================================================== */
+
+/* ---------- 1. Variabel ---------- */
+:root {
+    /* Happy Hues - Palet 17 */
+    --navy: #001858;       /* headline, stroke, border */
+    --paragraf: #172c66;   /* teks paragraf */
+    --putih: #fffffe;
+    --krem: #fef6e4;       /* background */
+    --pink: #f582ae;       /* tombol, aksen utama */
+    --biru: #8bd3dd;       /* aksen sekunder */
+    --peach: #f3d2c1;      /* aksen lembut */
+
+    --border: 3px solid var(--navy);
+    --bayangan: 6px 6px 0 var(--navy);
+    --bayangan-kecil: 2px 2px 0 var(--navy);
+
+    --jarak-kecil: 8px;
+    --jarak-sedang: 16px;
+    --jarak-besar: 24px;
+    --jarak-ekstra: 32px;
+    --jarak-section: 64px;
+
+    --font: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- 2. Reset dasar ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--paragraf);
+    background-color: var(--krem);
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+}
+
+h1, h2, h3 {
+    color: var(--navy);
+    line-height: 1.1;
+    font-weight: 900;
+}
+
+section[id] {
+    scroll-margin-top: 80px;
+}
+
+/* ---------- 3. Utilitas ---------- */
+.wadah {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--jarak-besar);
+}
+
+.sprite-icon {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.ikon {
+    width: 1.25em;
+    height: 1.25em;
+    flex-shrink: 0;
+}
+
+.ikon-besar {
+    width: 48px;
+    height: 48px;
+}
+
+.lompat-konten {
+    position: absolute;
+    left: var(--jarak-sedang);
+    top: -100px;
+    padding: var(--jarak-kecil) var(--jarak-sedang);
+    background: var(--biru);
+    border: var(--border);
+    font-weight: 800;
+    z-index: 200;
+}
+
+.lompat-konten:focus {
+    top: var(--jarak-sedang);
+}
+
+/* Focus state yang jelas untuk navigasi keyboard */
+a:focus-visible {
+    outline: 4px solid var(--navy);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 7px var(--biru);
+}
+
+/* ---------- 4. Header & Navigasi ---------- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--putih);
+    border-bottom: var(--border);
+}
+
+.navigasi {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--jarak-besar);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--jarak-sedang) var(--jarak-besar);
+}
+
+.navigasi-nama {
+    font-size: 1.375rem;
+    font-weight: 900;
+    text-decoration: none;
+    padding: 4px 12px;
+    background-color: var(--biru);
+    border: var(--border);
+    box-shadow: var(--bayangan-kecil);
+}
+
+.navigasi-daftar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--jarak-kecil);
+}
+
+.navigasi-daftar a {
+    display: block;
+    padding: 6px 14px;
+    font-weight: 700;
+    text-decoration: none;
+    border: var(--border);
+    background-color: var(--putih);
+    transition: background-color 0.15s, color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+
+.navigasi-daftar a:hover {
+    background-color: var(--pink);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--navy);
+}
+
+/* Burger disembunyikan di desktop */
+.navigasi-centang,
+.navigasi-burger {
+    display: none;
+}
+
+/* ---------- 5. Tombol ---------- */
+.tombol {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 12px 28px;
+    font-size: 1.0625rem;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: var(--pink);
+    border: var(--border);
+    box-shadow: var(--bayangan);
+    transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.tombol:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0 var(--navy);
+}
+
+.tombol:active {
+    transform: translate(6px, 6px);
+    box-shadow: 0 0 0 var(--navy);
+}
+
+.tombol-biru {
+    background-color: var(--biru);
+}
+
+/* ---------- 6. Judul section ---------- */
+.judul-section {
+    display: inline-block;
+    margin-bottom: var(--jarak-ekstra);
+    padding: 8px 20px;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    text-transform: uppercase;
+    background-color: var(--putih);
+    border: var(--border);
+    box-shadow: var(--bayangan);
+}
+
+/* ---------- 7. Beranda ---------- */
+.beranda {
+    padding: var(--jarak-section) 0;
+    background-color: var(--krem);
+    border-bottom: var(--border);
+    /* Grid dekoratif dengan kontras rendah */
+    background-image:
+        linear-gradient(rgba(0, 24, 88, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 24, 88, 0.12) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.beranda-isi {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+
+.beranda-foto {
+    flex: 0 0 340px;
+    background-color: var(--peach);
+    border: 4px solid var(--navy);
+    box-shadow: 10px 10px 0 var(--navy);
+}
+
+.beranda-foto img {
+    width: 100%;
+    aspect-ratio: 5 / 6;
+    object-fit: cover;
+    background-color: var(--peach);
+}
+
+.beranda-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.beranda-sapaan {
+    display: inline-block;
+    margin-bottom: var(--jarak-sedang);
+    padding: 4px 14px;
+    font-size: 1.125rem;
+    font-weight: 800;
+    background-color: var(--pink);
+    border: var(--border);
+}
+
+.beranda-nama {
+    margin-bottom: var(--jarak-sedang);
+    font-size: clamp(2.75rem, 7vw, 5rem);
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+}
+
+.beranda-status {
+    display: inline-block;
+    margin-bottom: var(--jarak-besar);
+    padding: 6px 18px;
+    font-size: 1.25rem;
+    font-weight: 900;
+    background-color: var(--biru);
+    border: var(--border);
+    box-shadow: var(--bayangan-kecil);
+}
+
+.beranda-deskripsi {
+    max-width: 52ch;
+    margin-bottom: var(--jarak-ekstra);
+    padding: var(--jarak-sedang);
+    background-color: var(--putih);
+    border: var(--border);
+}
+
+.beranda-aksi {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--jarak-besar);
+}
+
+/* ---------- 8. Icon sosial media ---------- */
+.sosial-daftar {
+    display: flex;
+    gap: var(--jarak-sedang);
+}
+
+.sosial-ikon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: var(--putih);
+    border: var(--border);
+    box-shadow: 4px 4px 0 var(--navy);
+    transition: transform 0.12s, box-shadow 0.12s, background-color 0.12s;
+}
+
+.sosial-ikon .ikon {
+    width: 24px;
+    height: 24px;
+}
+
+.sosial-ikon:hover {
+    background-color: var(--pink);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--navy);
+}
+
+.sosial-ikon-kecil {
+    width: 44px;
+    height: 44px;
+    box-shadow: 3px 3px 0 var(--navy);
+}
+
+/* ---------- 9. Tentang Saya ---------- */
+.tentang-saya {
+    padding: var(--jarak-section) 0;
+    background-color: var(--peach);
+    border-bottom: var(--border);
+}
+
+.tentang-saya-kotak {
+    max-width: 720px;
+    padding: var(--jarak-ekstra);
+    background-color: var(--putih);
+    border: var(--border);
+    box-shadow: var(--bayangan);
+}
+
+.tentang-saya-kotak p + p {
+    margin-top: var(--jarak-sedang);
+}
+
+/* ---------- 10. Keahlian ---------- */
+.keahlian {
+    padding: var(--jarak-section) 0;
+    background-color: var(--krem);
+    border-bottom: var(--border);
+}
+
+.keahlian-daftar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: var(--jarak-besar);
+}
+
+.kartu-keahlian {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--jarak-kecil);
+    padding: var(--jarak-besar) var(--jarak-sedang);
+    text-align: center;
+    background-color: var(--putih);
+    border: var(--border);
+    box-shadow: var(--bayangan);
+    transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.kartu-keahlian h3 {
+    font-size: 1.5rem;
+}
+
+.kartu-keahlian p {
+    padding: 2px 10px;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    background-color: var(--biru);
+    border: 2px solid var(--navy);
+}
+
+.kartu-keahlian:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0 var(--navy);
+}
+
+/* ---------- 11. Pengalaman ---------- */
+.pengalaman {
+    padding: var(--jarak-section) 0;
+    background-color: var(--biru);
+    border-bottom: var(--border);
+}
+
+.pengalaman-daftar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--jarak-besar);
+}
+
+.kartu-pengalaman {
+    display: flex;
+    align-items: stretch;
+    background-color: var(--putih);
+    border: var(--border);
+    box-shadow: var(--bayangan);
+}
+
+.kartu-pengalaman-nomor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 96px;
+    font-size: 2.25rem;
+    font-weight: 900;
+    background-color: var(--pink);
+    border-right: var(--border);
+}
+
+.kartu-pengalaman:nth-child(2) .kartu-pengalaman-nomor {
+    background-color: var(--peach);
+}
+
+.kartu-pengalaman:nth-child(3) .kartu-pengalaman-nomor {
+    background-color: var(--krem);
+}
+
+.kartu-pengalaman-isi {
+    padding: var(--jarak-besar);
+}
+
+.kartu-pengalaman-isi h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.kartu-pengalaman-tahun {
+    display: inline-block;
+    margin: var(--jarak-kecil) 0 var(--jarak-sedang);
+    padding: 0 12px;
+    font-weight: 800;
+    border: 2px solid var(--navy);
+    background-color: var(--peach);
+}
+
+/* ---------- 12. Kontak ---------- */
+.kontak {
+    padding: var(--jarak-section) 0;
+    background-color: var(--pink);
+    border-bottom: var(--border);
+    background-image:
+        linear-gradient(rgba(0, 24, 88, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 24, 88, 0.12) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.kontak-kotak {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px var(--jarak-besar);
+    text-align: center;
+    background-color: var(--putih);
+    border: 4px solid var(--navy);
+    box-shadow: 10px 10px 0 var(--navy);
+}
+
+.kontak-judul {
+    margin-bottom: var(--jarak-sedang);
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    text-transform: uppercase;
+}
+
+.kontak-teks {
+    max-width: 44ch;
+    margin: 0 auto var(--jarak-ekstra);
+}
+
+.kontak-daftar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--jarak-sedang);
+    margin-top: var(--jarak-ekstra);
+}
+
+.kontak-tautan {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--jarak-kecil);
+    min-height: 44px;
+    padding: 8px 16px;
+    font-weight: 800;
+    text-decoration: none;
+    background-color: var(--putih);
+    border: var(--border);
+    box-shadow: 4px 4px 0 var(--navy);
+    transition: transform 0.12s, box-shadow 0.12s, background-color 0.12s, color 0.12s;
+}
+
+.kontak-tautan:hover {
+    background-color: var(--biru);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--navy);
+}
+
+/* ---------- 13. Footer ---------- */
+.footer {
+    padding: var(--jarak-besar) 0;
+    color: var(--navy);
+    border-top: var(--border);
+    background-color: var(--biru);
+}
+
+.footer-isi {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--jarak-sedang);
+}
+
+.footer-isi p {
+    font-weight: 700;
+}
+
+/* ---------- 14. Responsive: Mobile (di bawah 768px) ---------- */
+@media (max-width: 767px) {
+
+    body {
+        font-size: 1rem;
+    }
+
+    section[id] {
+        scroll-margin-top: 0;
+    }
+
+    /* Header tidak menempel agar tidak memakan layar kecil */
+    .header {
+        position: static;
+    }
+
+    /* --- Burger nav: burger di kiri, nama di kanan --- */
+    .navigasi {
+        flex-wrap: wrap;
+        padding: var(--jarak-sedang);
+        gap: var(--jarak-sedang);
+    }
+
+    .navigasi-centang {
+        display: block;
+        position: absolute;
+        top: var(--jarak-sedang);
+        left: var(--jarak-sedang);
+        z-index: 2;
+        width: 48px;
+        height: 48px;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .navigasi-burger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background-color: var(--putih);
+        border: var(--border);
+        box-shadow: 4px 4px 0 var(--navy);
+        transition: background-color 0.15s, transform 0.12s, box-shadow 0.12s;
+    }
+
+    .navigasi-burger-garis,
+    .navigasi-burger-garis::before,
+    .navigasi-burger-garis::after {
+        display: block;
+        width: 22px;
+        height: 4px;
+        background-color: var(--navy);
+        transition: transform 0.15s, background-color 0.15s;
+    }
+
+    .navigasi-burger-garis {
+        position: relative;
+    }
+
+    .navigasi-burger-garis::before,
+    .navigasi-burger-garis::after {
+        content: "";
+        position: absolute;
+        left: 0;
+    }
+
+    .navigasi-burger-garis::before {
+        top: -8px;
+    }
+
+    .navigasi-burger-garis::after {
+        top: 8px;
+    }
+
+    /* Burger berubah menjadi tanda X saat menu terbuka */
+    .navigasi-centang:checked + .navigasi-burger {
+        background-color: var(--pink);
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0 var(--navy);
+    }
+
+    .navigasi-centang:checked + .navigasi-burger .navigasi-burger-garis {
+        background-color: transparent;
+    }
+
+    .navigasi-centang:checked + .navigasi-burger .navigasi-burger-garis::before {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navigasi-centang:checked + .navigasi-burger .navigasi-burger-garis::after {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Focus keyboard pada burger */
+    .navigasi-centang:focus-visible + .navigasi-burger {
+        outline: 4px solid var(--navy);
+        outline-offset: 3px;
+        box-shadow: 0 0 0 7px var(--biru);
+    }
+
+    /* Menu tersembunyi sampai burger dicentang */
+    .navigasi-daftar {
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+    }
+
+    .navigasi-centang:checked ~ .navigasi-daftar {
+        display: flex;
+    }
+
+    .navigasi-daftar a {
+        padding: 14px var(--jarak-sedang);
+        text-align: center;
+    }
+
+    .wadah {
+        padding: 0 var(--jarak-sedang);
+    }
+
+    .beranda,
+    .tentang-saya,
+    .keahlian,
+    .pengalaman,
+    .kontak {
+        padding: 48px 0;
+    }
+
+    .beranda-isi {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--jarak-ekstra);
+    }
+
+    .beranda-foto {
+        flex: none;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        box-shadow: 8px 8px 0 var(--navy);
+    }
+
+    .beranda-info {
+        text-align: center;
+    }
+
+    .beranda-deskripsi {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .beranda-aksi {
+        flex-direction: column;
+        gap: var(--jarak-besar);
+    }
+
+    .tombol {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .keahlian-daftar {
+        grid-template-columns: 1fr;
+    }
+
+    .kartu-pengalaman {
+        flex-direction: column;
+    }
+
+    .kartu-pengalaman-nomor {
+        flex: none;
+        padding: 8px;
+        border-right: none;
+        border-bottom: var(--border);
+    }
+
+    .tentang-saya-kotak {
+        padding: var(--jarak-besar);
+    }
+
+    .kontak-kotak {
+        padding: var(--jarak-ekstra) var(--jarak-sedang);
+        box-shadow: 8px 8px 0 var(--navy);
+    }
+
+    .kontak-daftar {
+        flex-direction: column;
+    }
+
+    .kontak-tautan {
+        justify-content: center;
+    }
+
+    .footer-isi {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ---------- 15. Hormati pengaturan "kurangi animasi" ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}

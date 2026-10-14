@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio pribadi: perkenalan diri, keahlian, dan pengalaman.">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <!-- Kumpulan icon SVG (dipakai ulang dengan <use>) -->
+    <svg class="sprite-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <symbol id="ikon-kode" viewBox="0 0 24 24">
+            <path d="M8 6l-6 6 6 6M16 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+        </symbol>
+        <symbol id="ikon-kurung" viewBox="0 0 24 24">
+            <path d="M9 3H6v7l-3 2 3 2v7h3M15 3h3v7l3 2-3 2v7h-3" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+        </symbol>
+        <symbol id="ikon-server" viewBox="0 0 24 24">
+            <path d="M3 4h18v6H3zM3 14h18v6H3zM7 7h.01M7 17h.01" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+        </symbol>
+        <symbol id="ikon-petir" viewBox="0 0 24 24">
+            <path d="M13 2L4 14h7l-1 8 9-12h-7z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="miter"/>
+        </symbol>
+        <symbol id="ikon-email" viewBox="0 0 24 24">
+            <path d="M3 5h18v14H3zM3 6l9 8 9-8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+        </symbol>
+        <symbol id="ikon-github" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/>
+        </symbol>
+        <symbol id="ikon-instagram" viewBox="0 0 24 24">
+            <path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM17.5 6.5h.01" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/>
+        </symbol>
+        <symbol id="ikon-panah" viewBox="0 0 24 24">
+            <path d="M4 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+        </symbol>
+    </svg>
+
+    <a class="lompat-konten" href="#beranda">Lewati ke konten utama</a>
+
+    <header class="header">
+        <nav class="navigasi" aria-label="Navigasi utama">
+            <!-- Burger menu (khusus mobile) memakai checkbox, tanpa JavaScript -->
+            <input type="checkbox" id="menu-buka" class="navigasi-centang" aria-label="Buka atau tutup menu navigasi">
+            <label for="menu-buka" class="navigasi-burger" aria-hidden="true">
+                <span class="navigasi-burger-garis"></span>
+            </label>
+
+            <a class="navigasi-nama" href="#beranda">DAVI</a>
+
+            <ul class="navigasi-daftar">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang-saya">Tentang Saya</a></li>
+                <li><a href="#keahlian">Keahlian</a></li>
+                <li><a href="#pengalaman">Pengalaman</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ============ BERANDA ============ -->
+        <section class="beranda" id="beranda">
+            <div class="wadah beranda-isi">
+                <div class="beranda-foto">
+                    <img src="image/gwe.jpeg" alt="Foto profil saya" width="400" height="480">
+                </div>
+
+                <div class="beranda-info">
+                    <p class="beranda-sapaan">Halo, saya</p>
+                    <h1 class="beranda-nama">Davi Khairil Fakih</h1>
+                    <p class="beranda-status">Pelajar PPLG</p>
+                    <p class="beranda-deskripsi">
+                        Saya sedang belajar membuat website dan aplikasi.
+                        Saya suka merapikan tampilan, menulis kode yang mudah dibaca,
+                        dan mencoba hal baru setiap hari.
+                    </p>
+                    <div class="beranda-aksi">
+                        <a class="tombol" href="#kontak">
+                            Hubungi Saya
+                            <svg class="ikon" aria-hidden="true"><use href="#ikon-panah"/></svg>
+                        </a>
+                        <ul class="sosial-daftar">
+                            <li>
+                                <a class="sosial-ikon" href="https://github.com/" aria-label="GitHub" target="_blank" rel="noopener">
+                                    <svg class="ikon" aria-hidden="true"><use href="#ikon-github"/></svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sosial-ikon" href="https://instagram.com/" aria-label="Instagram" target="_blank" rel="noopener">
+                                    <svg class="ikon" aria-hidden="true"><use href="#ikon-instagram"/></svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ TENTANG SAYA ============ -->
+        <section class="tentang-saya" id="tentang-saya">
+            <div class="wadah">
+                <h2 class="judul-section">Tentang Saya</h2>
+                <div class="tentang-saya-kotak">
+                    <p>
+                        Saya pelajar jurusan Pengembangan Perangkat Lunak dan Gim (PPLG).
+                        Saat ini saya fokus mempelajari dasar pembuatan website
+                        dengan HTML dan CSS.
+                    </p>
+                    <p>
+                        Minat saya ada di desain tampilan, pemrograman web, dan pembuatan
+                        aplikasi sederhana. Tujuan saya adalah menjadi pengembang web
+                        yang rapi dan bisa diandalkan.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ KEAHLIAN ============ -->
+        <section class="keahlian" id="keahlian">
+            <div class="wadah">
+                <h2 class="judul-section">Keahlian</h2>
+                <div class="keahlian-daftar">
+
+                    <article class="kartu-keahlian">
+                        <svg class="ikon ikon-besar" aria-hidden="true"><use href="#ikon-kode"/></svg>
+                        <h3>HTML</h3>
+                        <p>Kemampuan dasar</p>
+                    </article>
+
+                    <article class="kartu-keahlian">
+                        <svg class="ikon ikon-besar" aria-hidden="true"><use href="#ikon-kurung"/></svg>
+                        <h3>CSS</h3>
+                        <p>Kemampuan dasar</p>
+                    </article>
+
+                    <article class="kartu-keahlian">
+                        <svg class="ikon ikon-besar" aria-hidden="true"><use href="#ikon-server"/></svg>
+                        <h3>FIGMA</h3>
+                        <p>Sedang dipelajari</p>
+                    </article>
+
+                    
+
+                    <article class="kartu-keahlian">
+                        <svg class="ikon ikon-besar" aria-hidden="true"><use href="#ikon-petir"/></svg>
+                        <h3>JavaScript</h3>
+                        <p>Sedang dipelajari</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PENGALAMAN ============ -->
+        <section class="pengalaman" id="pengalaman">
+            <div class="wadah">
+                <h2 class="judul-section">Pengalaman</h2>
+                <div class="pengalaman-daftar">
+
+                    <article class="kartu-pengalaman">
+                        <span class="kartu-pengalaman-nomor">01</span>
+                        <div class="kartu-pengalaman-isi">
+                            <h3>Prestasi Kepramukaan</h3>
+                            <p class="kartu-pengalaman-tahun">2026</p>
+                            <p>
+                                Meraih Prestasi dalam Lomba Pramuka
+                                Berhasil meraih prestasi dalam perlombaan Pramuka
+                                melalui kerja sama tim, kedisiplinan,
+                                serta kemampuan menjalankan tugas dan tantangan selama kegiatan.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="kartu-pengalaman">
+                        <span class="kartu-pengalaman-nomor">02</span>
+                        <div class="kartu-pengalaman-isi">
+                            <h3>Kepercayaan Diri dan Komunikasi</h3>
+                            <p class="kartu-pengalaman-tahun">2025</p>
+                            <p>
+                                Memiliki Kepercayaan Diri dalam Berinteraksi
+                                Terbiasa berkomunikasi dan berinteraksi dengan orang lain secara percaya diri,
+                                serta mampu menghadapi situasi sosial tanpa mudah merasa canggung atau malu.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="kartu-pengalaman">
+                        <span class="kartu-pengalaman-nomor">03</span>
+                        <div class="kartu-pengalaman-isi">
+                            <h3>Adaptasi di Berbagai Lingkungan</h3>
+                            <p class="kartu-pengalaman-tahun">2025</p>
+                            <p>
+                                Pengalaman Belajar di Berbagai Lingkungan Sekolah
+                                Memiliki pengalaman beradaptasi dengan lingkungan belajar yang beragam melalui pengalaman mondok dan berinteraksi di 12 sekolah berbeda,
+                                sehingga terbiasa menghadapi lingkungan, karakter,
+                                dan situasi baru.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ KONTAK ============ -->
+        <section class="kontak" id="kontak">
+            <div class="wadah">
+                <div class="kontak-kotak">
+                    <h2 class="kontak-judul">Mari Terhubung</h2>
+                    <p class="kontak-teks">Saya terbuka untuk berkenalan, berdiskusi, dan bekerja sama.</p>
+
+                    <a class="tombol tombol-biru" href="mailto:emailsaya@contoh.com">
+                        Hubungi Saya
+                        <svg class="ikon" aria-hidden="true"><use href="#ikon-email"/></svg>
+                    </a>
+
+                    <ul class="kontak-daftar">
+                        <li>
+                            <a class="kontak-tautan" href="mailto:emailsaya@contoh.com">
+                                <svg class="ikon" aria-hidden="true"><use href="#ikon-email"/></svg>
+                                Email
+                            </a>
+                        </li>
+                        <li>
+                            <a class="kontak-tautan" href="https://github.com/" target="_blank" rel="noopener">
+                                <svg class="ikon" aria-hidden="true"><use href="#ikon-github"/></svg>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a class="kontak-tautan" href="https://instagram.com/" target="_blank" rel="noopener">
+                                <svg class="ikon" aria-hidden="true"><use href="#ikon-instagram"/></svg>
+                                Instagram
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="wadah footer-isi">
+            <p>&copy; 2026</p>
+            <ul class="sosial-daftar">
+                <li>
+                    <a class="sosial-ikon sosial-ikon-kecil" href="https://github.com/" aria-label="GitHub" target="_blank" rel="noopener">
+                        <svg class="ikon" aria-hidden="true"><use href="#ikon-github"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a class="sosial-ikon sosial-ikon-kecil" href="https://instagram.com/" aria-label="Instagram" target="_blank" rel="noopener">
+                        <svg class="ikon" aria-hidden="true"><use href="#ikon-instagram"/></svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
